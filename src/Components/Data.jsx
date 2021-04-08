@@ -1,3 +1,7 @@
-export default Data = {
-  
+export default dataClient = {
+  nameCompany: '',
+  inn: '',
+  cityCompany:'',
+  customerService: '',
+  countPC: '',
 }
