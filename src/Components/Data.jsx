@@ -5,4 +5,5 @@ export default dataClient = {
   monthSaveData: 0,
   typeHDDorHDD: 'HDD',
   monthUses: 0,
+  sumAll: 0,
 }
