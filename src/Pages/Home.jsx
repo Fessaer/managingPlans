@@ -1,7 +1,10 @@
-import React, { Component } from 'react'
-import { Table } from 'react-bootstrap'
+import React, { Component } from 'react';
+import { Table } from 'react-bootstrap';
 
 export default class Home extends Component {
+  constructor(props) {
+    super(props);
+  }
     render() {
         return (
             <div>
@@ -16,23 +19,23 @@ export default class Home extends Component {
   <tbody>
     <tr>
       <td>Название компании</td>
-      <td>ООО рога и копыта</td>
+      <td width="20%">ООО рога и копыта</td>
     </tr>
     <tr>
       <td>ИНН</td>
-      <td>342342342342352</td>
+      <td width="20%">342342342342352</td>
     </tr>
     <tr>
       <td>Город клиента</td>
-      <td>Selector</td>
+      <td width="20%">Selector</td>
     </tr>
     <tr>
       <td>Какая услуга интересна</td>
-      <td>Selector</td>
+      <td width="20%">Selector</td>
     </tr>
     <tr>
       <td>Необходимое количество пользователей для подключение</td>
-      <td>Input</td>
+      <td width="20%">Input</td>
     </tr>
   </tbody>
 </Table>
@@ -50,15 +53,15 @@ export default class Home extends Component {
     </tr>
     <tr>
       <td>Количество месяце хранения данных</td>
-      <td>Input</td>
+      <td width="20%">Input</td>
     </tr>
     <tr>
       <td>Тип жёсткого диска</td>
-      <td>Selector</td>
+      <td width="20%">Selector</td>
     </tr>
     <tr>
       <td>Период пользования услугой (месяцев)</td>
-      <td>Selector</td>
+      <td width="20%">Selector</td>
     </tr>
   </tbody>
 </Table>
@@ -73,11 +76,11 @@ export default class Home extends Component {
     <tbody>
     <tr>
       <td>Стоимость услуги с использованием диска HDD на 1 мес. для 10 пользователей</td>
-      <td>OUTPUT PRICE</td>
+      <td width="20%">OUTPUT PRICE</td>
     </tr>
     <tr>
       <td>Стоимость услуги с использованием диска HDD на 1 мес. для 10 пользователей</td>
-      <td>OUTPUT PRICE</td>
+      <td width="20%">OUTPUT PRICE</td>
     </tr>
   </tbody>
 </Table>
