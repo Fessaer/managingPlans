@@ -1,4 +1,4 @@
-import React, { Component, FormControl } from 'react'
+import React, { Component } from 'react'
 
 export default class Calc extends Component {
 

@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
-import { Nav, Navbar, Container, Button } from 'react-bootstrap'
+import { Nav, Navbar, Container } from 'react-bootstrap'
 import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse'
 import NavbarToggle from 'react-bootstrap/esm/NavbarToggle'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Home from '../Pages/Home'
+import Print from '../Pages/Print'
+import History from '../Pages/History'
 import Logo from './er.png'
 export default class Header extends Component {
   render() {
     return (
+      <>
       <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
         <Container>
           <Navbar.Brand href="/">
@@ -19,12 +24,21 @@ export default class Header extends Component {
           </Navbar.Brand>
           <NavbarToggle aria-controls="responsive-navbar-nav" />
             <NavbarCollapse id="mr-auto">
-              <Nav.Link href="/">Калькулятор Менеджера</Nav.Link>
-              <Nav.Link href="/calc">Данные для клиента</Nav.Link>
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/print">Print</Nav.Link>
+              <Nav.Link href="/history">History</Nav.Link>
             </NavbarCollapse>
           
         </Container>
       </Navbar>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/print" component={Print} />
+          <Route exact path="/history" component={History} />
+        </Switch>
+      </Router>
+      </>
     )
   }
 }
