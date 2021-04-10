@@ -3,15 +3,21 @@ import { Nav, Navbar, Container } from 'react-bootstrap'
 import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse'
 import NavbarToggle from 'react-bootstrap/esm/NavbarToggle'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Home from '../Pages/Home'
-import Print from '../Pages/Print'
-import History from '../Pages/History'
+import Home from '../pages/Home'
+import Print from '../pages/Print'
+import History from '../pages/History'
+import AddUser from '../pages/AddUser'
 import Logo from './er.png'
 export default class Header extends Component {
+  // constructor(props) {
+  //   super(props)
+  // }
   render() {
+    
+    console.log(this.props)
     return (
       <>
-      <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
+      <Navbar collapseOnSelect expand="md" bg="dark" variant="dark" >
         <Container>
           <Navbar.Brand href="/">
             <img
@@ -24,9 +30,10 @@ export default class Header extends Component {
           </Navbar.Brand>
           <NavbarToggle aria-controls="responsive-navbar-nav" />
             <NavbarCollapse id="mr-auto">
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/print">Print</Nav.Link>
-              <Nav.Link href="/history">History</Nav.Link>
+              <Nav.Link href="/">Калькулятор</Nav.Link>
+              <Nav.Link href="/print">О клиенте</Nav.Link>
+              <Nav.Link href="/history">История</Nav.Link>
+              <Nav.Link href="/addUser">Данные</Nav.Link>
             </NavbarCollapse>
           
         </Container>
@@ -36,6 +43,7 @@ export default class Header extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/print" component={Print} />
           <Route exact path="/history" component={History} />
+          <Route exact path="/addUser" component={AddUser} />
         </Switch>
       </Router>
       </>

@@ -5,6 +5,9 @@ export default class Home extends Component {
   constructor(props) {
     super(props);
   }
+  handleClick = () => {
+
+  }
     render() {
         return (
             <div>
@@ -27,7 +30,7 @@ export default class Home extends Component {
     </tr>
     <tr>
       <td>Город клиента</td>
-      <td width="20%">Selector</td>
+      <td width="20%"><input type="text" className="form-control" placeholder="Город" onChange={this.handleClick}/></td>
     </tr>
     <tr>
       <td>Какая услуга интересна</td>

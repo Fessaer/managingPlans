@@ -4,9 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+
+const text = 'text'
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App text={text}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
