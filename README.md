@@ -1,2 +1,3 @@
 git clone ...
 make install || npm ci
+npm start (start react local server)
