@@ -1,40 +1,56 @@
 import React, { Component } from 'react'
 import { Table } from 'react-bootstrap';
-
+import firebase from 'firebase/app';
+import _ from 'lodash'
 export default class History extends Component {
+  constructor(props) {
+    super(props)
+    this.data
+    this.state = {}
+  }
+  componentDidMount = async () => {
+    try {
+        const query_clientsList = await firebase.database().ref('history').once('value')
+        const clientsList = query_clientsList.val()
+        let dataHistory = []
+        for (const item in clientsList) {
+          dataHistory.push(clientsList[item])
+        }
+        this.setState({dataHistory})
+    } catch (error) {
+        console.log(error.message)
+        throw error
+    }
+}
     render() {
+      
+     
+      // dataHistory.map((item) => console.log(item))
         return (
             <div>
 <Table striped bordered hover size="sm" variant="dark">
   <thead>
     <tr>
-      <th width="1rem">#</th>
       <th>Имя</th>
       <th>Данные</th>
       <th width="10%">Тариф</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>1</td>
-      <td>Mark</td>
-      <td>Безлимитный</td>
-      <td>12000 р</td>
+  {Object.prototype.hasOwnProperty.call(this.state, 'dataHistory') ? this.state.dataHistory.map((item) => {
+    return (
+      <tr key={_.uniqueId()}>
+      <td>{item.companyName}</td>
+      <td>{item.service}, типа диска: {item.typeHDD}, адресс: {item.adressCompany}</td>
+      <td>{item.priceHDD} р</td>
     </tr>
-    <tr>
-      <td>2</td>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td colSpan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    )}) : null}
   </tbody>
 </Table>
+            
+            
             </div>
         )
     }
 }
+

@@ -14,7 +14,7 @@ export default class Home extends Component {
       try {
           const query_clientsList = await firebase.database().ref('clients').once('value')
           const clientsList = query_clientsList.val()
-          this.data = clientsList         
+          this.data = clientsList
       } catch (error) {
           console.log(error.message)
           throw error
@@ -32,7 +32,7 @@ export default class Home extends Component {
         getOptionLabel={(option) => option.title}
         getOptionSelected={(option, value) => option.id === value.id}
         style={{ width: '100%', height: 'auto' }}
-        renderInput={(params) => <TextField {...params} label="Вид сервиса" variant="outlined" />}
+        renderInput={(params) => <TextField {...params} label="Вид сервиса" color="primary" variant="outlined" />}
       />
     )
   }
@@ -73,20 +73,20 @@ export default class Home extends Component {
     dataObj.company.serviceUsagePeriod = value
     this.setState({dataObj})
   }
-  clickMath = () => {
+  clickMath = async () => {
     const dataObj = this.state
-    // const priceHdd = dataObj.company.typeHDD
+    const priceСountUsers = dataObj.company.countUsers
     const priceServiceUsagePeriod = dataObj.company.serviceUsagePeriod
     const priceNumberOfmonths = dataObj.company.numberOfmonths
-    let priceHDD = 3.4 * priceServiceUsagePeriod * priceNumberOfmonths
-    let priceSDD = 51 * priceServiceUsagePeriod * priceNumberOfmonths
-    dataObj.company.priceHDD = priceHDD
-    dataObj.company.priceSSD = priceSDD
+    let priceHDD = 30 * priceServiceUsagePeriod * priceNumberOfmonths * priceСountUsers
+    let priceSSD = 51 * priceServiceUsagePeriod * priceNumberOfmonths * priceСountUsers
+    dataObj.company.priceHDD = Math.round(priceHDD)
+    dataObj.company.priceSSD = Math.round(priceSSD)
     this.setState({dataObj})
-    
-      
-    
+    await firebase.database().ref('history').push(this.state.company) 
     console.log(this.state)
+    
+    
   }
   handleHHD = (e) => {
     const value = e.target.text
@@ -97,7 +97,9 @@ export default class Home extends Component {
   }
 
     render() {
+      
         return (
+          
             <div>
 <Table striped bordered hover size="sm" variant="dark">
   <thead>
@@ -185,11 +187,11 @@ export default class Home extends Component {
     </thead>
     <tbody>
     <tr>
-      <td>Стоимость услуги с использованием диска HDD на 1 мес. для 10 пользователей</td>
+      <td>Стоимость услуги с использованием диска HDD на 1 мес. для {Object.prototype.hasOwnProperty.call(this.state.company, 'countUsers') ? this.state.company.countUsers : 0 } пользователей</td>
       <td width="20%">{this.state.company.priceHDD}</td>
     </tr>
     <tr>
-      <td>Стоимость услуги с использованием диска SDD на 1 мес. для 10 пользователей</td>
+      <td>Стоимость услуги с использованием диска SDD на 1 мес. для {Object.prototype.hasOwnProperty.call(this.state.company, 'countUsers') ? this.state.company.countUsers : 0 } пользователей</td>
       <td width="20%">{this.state.company.priceSSD}</td>
     </tr>
   </tbody>
