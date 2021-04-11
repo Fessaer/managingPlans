@@ -149,7 +149,7 @@ export default class Home extends Component {
     <tr>
       <td>Количество месяце хранения данных</td>
       <td width="20%">
-      <input type="text" className="form-control" placeholder="месяцев" aria-label="Example text with button addon" aria-describedby="button-addon1" onChange={this.numberOfMonthsSaveData} />
+      <input className="form-control" placeholder="месяцев" aria-label="Example text with button addon" aria-describedby="button-addon1" onChange={this.numberOfMonthsSaveData} type="number" pattern="[0-9]*" />
       </td>
     </tr>
     <tr>
@@ -172,7 +172,7 @@ export default class Home extends Component {
     </tr>
     <tr>
       <td>Период пользования услугой (месяцев)</td>
-      <td width="20%"><input type="text" className="form-control" placeholder="месяцев" aria-label="Example text with button addon" aria-describedby="button-addon1" onChange={this.numberOfMonthsService} />
+      <td width="20%"><input className="form-control" placeholder="месяцев" aria-label="Example text with button addon" aria-describedby="button-addon1" onChange={this.numberOfMonthsService} type="number" pattern="[0-9]*" />
 </td>
     </tr>
   </tbody>

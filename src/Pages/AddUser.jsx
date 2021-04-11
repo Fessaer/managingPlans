@@ -149,7 +149,7 @@ export default class AddUser extends Component {
     </tr>
     <tr>
       <td>ИНН</td>
-      <td width="20%"><input type="text" className="form-control" value={this.state.INNCompany} placeholder="ИНН" onChange={this.handleInn}/></td>
+      <td width="20%"><input type="number" pattern="[0-9]*" className="form-control" value={this.state.INNCompany} placeholder="ИНН" onChange={this.handleInn}/></td>
     </tr>
     <tr>
       <td>Город клиента</td>
@@ -161,7 +161,7 @@ export default class AddUser extends Component {
     </tr>
     <tr>
       <td>Необходимое количество пользователей для подключение</td>
-      <td width="30%"><input type="text" className="form-control" value={this.state.countUsers} placeholder="пользователи" onChange={this.handleCountUsers}/></td>
+      <td width="30%"><input type="number" pattern="[0-9]*" className="form-control" value={this.state.countUsers} placeholder="пользователи" onChange={this.handleCountUsers}/></td>
     </tr>
   </tbody>
 </Table>
