@@ -134,7 +134,7 @@ export default class AddUser extends Component {
     const { buttonDisabled } = this.state
     return (
       <div>
-        <Table striped bordered hover size="sm" variant="dark">
+        <Table striped bordered hover size="sm" variant="secondary">
   <thead>
     <tr>
       <th colSpan="2">
@@ -165,7 +165,7 @@ export default class AddUser extends Component {
     </tr>
   </tbody>
 </Table>
-        <Button variant="primary" onClick={this.saveClient} disabled={buttonDisabled}>Добавить в базу данных</Button>
+        <Button variant="info" onClick={this.saveClient} disabled={buttonDisabled}>Добавить в базу данных</Button>
       </div>
     )
   }

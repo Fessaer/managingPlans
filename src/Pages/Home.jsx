@@ -22,9 +22,9 @@ export default class Home extends Component {
   
   }
   changeService = () => {
+    
     return (
       <Autocomplete
-        
         id="combo-box-demo"
         size="small"
         onInputChange={this.changeServise}
@@ -32,7 +32,7 @@ export default class Home extends Component {
         getOptionLabel={(option) => option.title}
         getOptionSelected={(option, value) => option.id === value.id}
         style={{ width: '100%', height: 'auto' }}
-        renderInput={(params) => <TextField {...params} label="Вид сервиса" color="primary" variant="outlined" />}
+        renderInput={(params) => <TextField {...params} label="Вид сервиса"  color="primary" variant="outlined" />}
       />
     )
   }
@@ -55,7 +55,7 @@ export default class Home extends Component {
     return (
     <div className="input-group mb-3">
       <div className="input-group-prepend">
-        <button className="btn btn-outline-primary" type="button" id="button-addon1" onClick={this.clickSearch}>Поиск</button>
+        <button className="btn btn-outline-info" type="button" id="button-addon1" onClick={this.clickSearch}>Поиск</button>
       </div>
       <input type="text" className="form-control" placeholder="в базе клиентов" aria-label="Example text with button addon" aria-describedby="button-addon1" onChange={this.handleChengeSearch} />
     </div>
@@ -101,7 +101,7 @@ export default class Home extends Component {
         return (
           
             <div>
-<Table striped bordered hover size="sm" variant="dark">
+<Table striped bordered hover size="sm" variant="secondary">
   <thead>
     <tr>
       <th colSpan="2">
@@ -134,7 +134,7 @@ export default class Home extends Component {
     </tr>
   </tbody>
 </Table>
-<Table striped bordered hover size="sm" variant="dark">
+<Table striped bordered hover size="sm" variant="secondary">
     <thead>
         <tr>
             <th colSpan="2">
@@ -156,7 +156,7 @@ export default class Home extends Component {
       <td>Тип жёсткого диска</td>
       <td width="20%">
       <DropdownButton
-        
+        variant="info"
         menuAlign="left"
         title={Object.prototype.hasOwnProperty.call(this.state.company, 'typeHDD') ? this.state.company.typeHDD : 'Тип жёсткого диска' }
         id="dropdown-menu-align-responsive-1"
@@ -177,7 +177,7 @@ export default class Home extends Component {
     </tr>
   </tbody>
 </Table>
-<Table striped bordered hover size="sm" variant="dark">
+<Table striped bordered hover size="sm" variant="secondary">
 <thead>
         <tr>
             <th colSpan="2">
@@ -196,7 +196,7 @@ export default class Home extends Component {
     </tr>
   </tbody>
   <>
-  <Button variant="primary" onClick={this.clickMath}>Расчитать</Button>
+  <Button variant="info" onClick={this.clickMath}>Расчитать</Button>
   </>
 </Table>
 

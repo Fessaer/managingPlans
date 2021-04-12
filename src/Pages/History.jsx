@@ -28,7 +28,7 @@ export default class History extends Component {
       // dataHistory.map((item) => console.log(item))
         return (
             <div>
-<Table striped bordered hover size="sm" variant="dark">
+<Table striped bordered hover size="sm" variant="secondary">
   <thead>
     <tr>
       <th>Имя</th>

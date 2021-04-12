@@ -43,7 +43,7 @@ class ComponentToPrint extends PureComponent {
         console.log(this.state)
     return (
         <>
-        <Table striped bordered hover size="sm" variant="dark">
+        <Table striped bordered hover size="sm" variant="secondary">
         <thead>
           <tr>
             <th colSpan="2">
@@ -101,7 +101,7 @@ class ComponentToPrint extends PureComponent {
           </tr>
         </tbody>
       </Table>
-      <div style={{padding: '10px'}}><Button variant="primary" onClick={this.print}>Сохранить PDF</Button></div>
+      <div style={{padding: '10px'}}><Button variant="info" onClick={this.print}>Сохранить PDF</Button></div>
       </>
       );
     } else { return null}
@@ -115,7 +115,7 @@ class Print extends React.Component {
         <ComponentToPrint ref={el => (this.componentRef = el)} />
         <ReactToPrint
             content={() => this.componentRef}
-            trigger={() => <div style={{padding: '10px'}}><Button variant="primary">Печать</Button></div>}
+            trigger={() => <div style={{padding: '10px'}}><Button variant="info">Печать</Button></div>}
         />
         </div>
     );

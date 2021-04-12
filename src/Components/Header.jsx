@@ -3,10 +3,10 @@ import { Nav, Navbar, Container } from 'react-bootstrap'
 import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse'
 import NavbarToggle from 'react-bootstrap/esm/NavbarToggle'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Home from '../pages/Home'
-import Print from '../pages/Print'
-import History from '../pages/History'
-import AddUser from '../pages/AddUser'
+import Home from '../Pages/Home'
+import Print from '../Pages/Print'
+import History from '../Pages/History'
+import AddUser from '../Pages/AddUser'
 import Logo from './er.png'
 export default class Header extends Component {
   // constructor(props) {
@@ -17,7 +17,7 @@ export default class Header extends Component {
     console.log(this.props)
     return (
       <>
-      <Navbar collapseOnSelect expand="md" bg="dark" variant="dark" >
+      <Navbar collapseOnSelect expand="md" bg="light" variant="secondary" >
         <Container>
           <Navbar.Brand href="/">
             <img
