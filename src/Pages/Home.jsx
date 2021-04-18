@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Table, Dropdown, DropdownButton, Button } from 'react-bootstrap';
+import { Table, Dropdown, DropdownButton, Button, ButtonGroup } from 'react-bootstrap';
 import firebase from 'firebase/app';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
@@ -155,19 +155,22 @@ export default class Home extends Component {
     <tr>
       <td>Тип жёсткого диска</td>
       <td width="20%">
+
+      <ButtonGroup justified>
       <DropdownButton
         variant="info"
         menuAlign="left"
         title={Object.prototype.hasOwnProperty.call(this.state.company, 'typeHDD') ? this.state.company.typeHDD : 'Тип жёсткого диска' }
         id="dropdown-menu-align-responsive-1"
         onClick={this.handleHHD}
-
       >
         <Dropdown.Item eventKey="1" aria-expanded="true">HDD</Dropdown.Item>
         <Dropdown.Item eventKey="2">SSD</Dropdown.Item>
         <Dropdown.Divider />
           <Dropdown.Item eventKey="4">Оба варианта</Dropdown.Item>
         </DropdownButton>
+        </ButtonGroup>
+
       </td>
     </tr>
     <tr>
