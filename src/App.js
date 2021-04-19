@@ -1,4 +1,6 @@
 import './App.css';
+var React = require('react');
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Header from './Components/Header';
 import firebase from 'firebase/app'
